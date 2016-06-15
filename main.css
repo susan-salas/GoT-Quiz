@@ -1,0 +1,43 @@
+body {
+    background-image: url('Game-of-Thrones-Iron-Throne-Wallpaper-Edited-1920x1080.jpg');
+    background-size: cover;
+}
+
+.feedback {
+    float: right;
+    color: dimgrey;
+}
+
+.bubble {
+    color: gray;
+    margin-top: 15rem;
+    text-align: center;
+    padding-top: 1em;
+    font-size: 15px;
+    margin: auto;
+    max-width: 45em;
+    display: block;
+    position: relative;
+    margin-top: 15em;
+    /*
+    -webkit-box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.75);
+*/
+}
+
+.bubble::after {
+    content: "";
+    background-color: black;
+    opacity: 0.6;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+.answers {
+    list-style-type: none;
+}
