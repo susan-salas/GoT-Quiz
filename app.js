@@ -26,28 +26,28 @@ var question2 = {
     correctAnswer: 2
 }
 var question3 = {
-    question: "question3",
-    answers: ["a. A3",
-              "b. ",
-              "c. ",
-              "d."],
-    correctAnswer: 2
+    question: "Lyanna Stark was kidnapped by",
+    answers: ["a. Robert Baratheon",
+              "b. Jon Arryn",
+              "c. Tywin Lannister",
+              "d. Rhaegar Targaryen"],
+    correctAnswer: 3
 }
 var question4 = {
-    question: "question4",
-    answers: ["a.A4",
-              "b. ",
-              "c. ",
-              "d."],
-    correctAnswer: 3
+    question: "Daenerys Targaryen is known by all these names except",
+    answers: ["a. Mother of Dragons",
+              "b. Khaleesi of the Great Essos",
+              "c. Breaker of Chains",
+              "d. Queen of Meereen"],
+    correctAnswer: 1
 }
 var question5 = {
-    question: "question5",
-    answers: ["a. A5",
-              "b. ",
-              "c. ",
-              "d."],
-    correctAnswer: 3
+    question: "The seat of the Lannister's is in",
+    answers: ["a. Casterly Rock",
+              "b. Riverrun",
+              "c. Dorne",
+              "d.Eyrie"],
+    correctAnswer: 0
 }
 
 var questionsArray = [question1, question2, question3, question4, question5];
@@ -90,7 +90,6 @@ function checkAnswer(answer) {
     var question = questionsArray[game.question];
     var num = game.question;
 
-    console.log(num);
     if (answer == question.correctAnswer) {
         game[num] = true;
     } else {
@@ -101,7 +100,14 @@ function checkAnswer(answer) {
 }
 
 function finalresults() {
-    alert("you've reached the end");
+    $("#overlay").css("visibility", "visible");
+//    if (game.score == 0) {
+//        $('.final-feedback').text("You know nothing Jon Snow");
+//    } else(game.score < 3) {
+//        $('.final-feedback').text("Meh. Come one you can do better");
+//    } else {
+//        $('.final-feedback').text("Nice Job!");
+//    }
 }
 
 function startOver() {
@@ -126,5 +132,8 @@ $(document).ready(function () {
             finalresults();
         }
 
+    });
+    $('.new-game').click(function () {
+        location.reload();
     });
 });

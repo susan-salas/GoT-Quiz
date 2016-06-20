@@ -3,41 +3,62 @@ body {
     background-size: cover;
 }
 
+#overlay {
+    visibility: hidden;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    z-index: 1000;
+}
+
+#overlay div {
+    max-width: 35em;
+    margin: 150px auto;
+    background-color: black;
+    border: 1px solid darkgoldenrod;
+    padding: 4em;
+    text-align: center;
+    color: white;
+    background-image: url(Jon-Snow-on-the-Iron-Throne.jpg);
+    background-size: cover;
+}
+
 .feedback {
     float: right;
     color: dimgrey;
+    display: inline-block;
 }
 
 .bubble {
     color: gray;
-    margin-top: 15rem;
     text-align: center;
-    padding-top: 1em;
+    padding: 2em;
     font-size: 15px;
     margin: auto;
-    max-width: 45em;
+    max-width: 40em;
     display: block;
     position: relative;
-    margin-top: 15em;
-    /*
-    -webkit-box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.75);
-    box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.75);
-*/
+    margin-top: 10em;
+    border-radius: 2%;
 }
 
 .bubble::after {
     content: "";
     background-color: black;
-    opacity: 0.6;
+    opacity: 0.8;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
     position: absolute;
     z-index: -1;
+    border-radius: 2%;
 }
 
-.answers {
+.answers,
+.answer-feedback {
     list-style-type: none;
 }
