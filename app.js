@@ -76,11 +76,11 @@ function updateFeedback() {
             $('.answer-feedback').append(row);
             answersCorrect++;
         } else {
-            console.log("you got this wrong");
             var row = $('<li>Question ' + (i + 1) + ' wrong</li>');
             $('.answer-feedback').append(row);
         }
     }
+    game.score = answersCorrect;
     $('.total-score').text(answersCorrect + "/5");
 
 }
@@ -100,14 +100,16 @@ function checkAnswer(answer) {
 }
 
 function finalresults() {
+    console.log(game.score);
     $("#overlay").css("visibility", "visible");
-//    if (game.score == 0) {
-//        $('.final-feedback').text("You know nothing Jon Snow");
-//    } else(game.score < 3) {
-//        $('.final-feedback').text("Meh. Come one you can do better");
-//    } else {
-//        $('.final-feedback').text("Nice Job!");
-//    }
+    if (game.score == 0) {
+        console.log("score is 0");
+        $('#overlay .final-feedback').text("You know nothing Jon Snow");
+    } else if (game.score < 3) {
+        $('#overlay .final-feedback').text("Meh. Come one you can do better");
+    } else {
+        $('#overlay .final-feedback').text("Nice Job!");
+    }
 }
 
 function startOver() {
@@ -124,7 +126,6 @@ $(document).ready(function () {
         indexOfAnswer = $("input[name=RadioGroup1]:checked").val();
 
         checkAnswer(indexOfAnswer);
-        console.log(game.question);
         if (game.question < 5) {
             displayQuestions();
         }

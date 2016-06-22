@@ -29,7 +29,7 @@ body {
 .feedback {
     float: right;
     color: dimgrey;
-    display: inline-block;
+    margin-top: 10%;
 }
 
 .bubble {
@@ -38,10 +38,17 @@ body {
     padding: 2em;
     font-size: 15px;
     margin: auto;
-    max-width: 40em;
+    width: 40%;
     display: block;
-    position: relative;
-    margin-top: 10em;
+    position: absolute;
+    /*
+    left: 0;
+    top: 40%;
+    position: fixed;
+*/
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%);
     border-radius: 2%;
 }
 
@@ -61,4 +68,15 @@ body {
 .answers,
 .answer-feedback {
     list-style-type: none;
+}
+
+.total-score {
+    position: fixed;
+    transform: translateX(-110%);
+}
+
+.answer-feedback {
+    position: fixed;
+    transform: translateX(-80%);
+    min-width: 10em;
 }
